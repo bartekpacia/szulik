@@ -1,25 +1,13 @@
 import React from "react"
 import { Link } from "gatsby"
-import { css } from "styled-components"
 
 import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
 
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div
-      css={css`
-        max-width: 300px;
-        margin-bottom: 1.45rem;
-      `}
-    >
-      <Image />
-    </div>
+    <h1>Witaj na stronie Szkolnego Związku Sportowego w Rybniku</h1>
     <Link to="/page-2/">Go to page 2</Link>
   </Layout>
 )

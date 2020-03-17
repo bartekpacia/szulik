@@ -1,24 +1,28 @@
 import { Link } from "gatsby"
-import PropTypes from "prop-types"
 import React from "react"
 import { css } from "styled-components"
+import useSiteMetadata from "../hooks/useSiteMetadata"
 
-const Header = ({ siteTitle }) => (
-  <header
-    css={css`
-      background: rebeccapurple;
-      margin-bottom: 1.45rem;
-    `}
-  >
-    <div
+const Header = () => {
+  const { title } = useSiteMetadata()
+
+  return (
+    <header
       css={css`
-        margin: 0 auto;
-        max-width: 960px;
-        padding: 1.45rem 1.0875rem;
+        box-sizing: border-box;
+        background: ${props => props.theme.colors.primary};
+        margin: 0 0;
+        padding: 0.5rem;
+
+        @media ${props => props.theme.media.tablet} {
+          padding-right: calc((100vw - 600px) / 2);
+          padding-left: calc((100vw - 600px) / 2);
+        }
       `}
     >
-      <h1
+      <h2
         css={css`
+          text-align: center;
           margin: 0;
         `}
       >
@@ -29,19 +33,11 @@ const Header = ({ siteTitle }) => (
             text-decoration: none;
           `}
         >
-          {siteTitle}
+          {title}
         </Link>
-      </h1>
-    </div>
-  </header>
-)
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
+      </h2>
+    </header>
+  )
 }
 
 export default Header
