@@ -8,7 +8,7 @@ const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
     <h1>Witaj na stronie Szkolnego Związku Sportowego w Rybniku</h1>
-    <Link to="/page-2/">Go to page 2</Link>
+    <Link to="/news/">Zobacz aktualności</Link>
   </Layout>
 )
 
