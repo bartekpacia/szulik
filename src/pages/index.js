@@ -11,10 +11,22 @@ const IndexPage = () => {
   return (
     <Layout>
       <h1>Witaj na stronie Szkolnego Związku Sportowego w Rybniku</h1>
+      <p
+        css={css`
+          display: block;
+          margin: 0;
+          padding: 1rem;
+          background: #eee;
+        `}
+      >
+        Znajdziesz tu wszystkie informacje o nowych osiągnięciach, dokumenty,
+        bla bla bla.
+      </p>
       <h3>Najnowsze aktualności</h3>
       <div
         css={css`
           display: flex;
+          flex-direction: column;
         `}
       >
         {posts.map(post => (

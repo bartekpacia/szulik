@@ -1,8 +1,8 @@
 ---
-title: Another post
-slug: another-post
-author: Bartek Pacia
+title: Wiadomość numer 2
+slug: druga-wiadomosc
+author: Grażyna Szulik
 image: ./images/coder.jpg
 ---
 
-This is my next blogpost. I'm on a roll!
+Druga przykładowa wiadomość.

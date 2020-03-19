@@ -1,12 +1,7 @@
 import React from "react"
-import styled, { css } from "styled-components"
+import { css } from "styled-components"
 import { Link } from "gatsby"
 import Image from "gatsby-image"
-
-const ReadLink = styled(Link)`
-  display: inline-block;
-  font-size: 0.875rem;
-`
 
 const PostThumb = ({ post }) => (
   <article
@@ -20,6 +15,7 @@ const PostThumb = ({ post }) => (
     <Link
       to={post.slug}
       css={css`
+        flex-shrink: 0;
         margin: 1rem 1rem 0 0;
         width: 100px;
       `}
@@ -39,7 +35,7 @@ const PostThumb = ({ post }) => (
         <Link to={post.slug}>{post.title}</Link>
       </h3>
       <p>{post.excerpt}</p>
-      <ReadLink to={post.slug}>read this post &rarr;</ReadLink>
+      <Link to={post.slug}>przeczytaj &rarr;</Link>
     </div>
   </article>
 )

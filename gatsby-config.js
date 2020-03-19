@@ -1,6 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Szkolny Związek Sportowy w Rybniku`,
+    shortTitle: `SZS Rybnik`,
     description: `Oficjalna strona szkolnego związku sportowego w Rybniku/`,
     author: `@bartekpacia`,
   },

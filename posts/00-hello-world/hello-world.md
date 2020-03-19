@@ -1,12 +1,8 @@
 ---
-title: Hello world!
-slug: hello-world
-author: Bartek Pacia
+title: Wiadomość 1
+slug: pierwsza-wiadomosc
+author: Grażyna Szulik
 image: ./images/city.jpg
 ---
 
-![Some nice city picture](./images/city.jpg)
-
-Pierwsza przykładowa wiadomość. Lol.
-
-Można dodać zdjęcia, linki i inne fajne rzeczy.
+Pierwsza przykładowa wiadomość.

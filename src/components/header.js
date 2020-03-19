@@ -9,7 +9,6 @@ const NavHeading = styled(Link)`
     display: block;
     font-weight: bold;
     font-size: 1.2rem;
-    margin-bottom: 1rem;
     padding: 0.25rem;
   }
 `
@@ -26,13 +25,13 @@ const NavLink = styled(Link)`
 `
 
 const Header = () => {
-  const { title } = useSiteMetadata()
+  const { shortTitle } = useSiteMetadata()
 
   return (
     <header
-      css={`
+      css={css`
         display: flex;
-        flex-direction: column;
+        justify-content: space-between;
         align-items: center;
         background: ${props => props.theme.colors.primary};
         padding: 0.5rem;
@@ -43,7 +42,7 @@ const Header = () => {
         }
       `}
     >
-      <NavHeading href="/">{title}</NavHeading>
+      <NavHeading href="/">{shortTitle}</NavHeading>
       <nav>
         <NavLink to="/news/">Aktualności</NavLink>
         <NavLink to="/photos">Zdjęcia</NavLink>
