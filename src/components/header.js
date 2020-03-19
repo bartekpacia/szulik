@@ -20,7 +20,12 @@ const NavLink = styled(Link)`
     font-weight: normal;
     margin: 0 0.5rem 0 0;
     padding: 0.7rem;
+    padding-bottom: 0.2rem;
     text-decoration: none;
+
+    &.current-page {
+      border-bottom: 2px solid white;
+    }
   }
 `
 
@@ -44,9 +49,15 @@ const Header = () => {
     >
       <NavHeading href="/">{shortTitle}</NavHeading>
       <nav>
-        <NavLink to="/news/">Aktualności</NavLink>
-        <NavLink to="/photos">Zdjęcia</NavLink>
-        <NavLink to="/about">O nas</NavLink>
+        <NavLink to="/news/" activeClassName="current-page">
+          Aktualności
+        </NavLink>
+        <NavLink to="/photos" activeClassName="current-page">
+          Zdjęcia
+        </NavLink>
+        <NavLink to="/about" activeClassName="current-page">
+          O nas
+        </NavLink>
       </nav>
     </header>
   )

@@ -28,7 +28,6 @@ const PostTemplate = ({ data }) => {
       >
         autor: {post.frontmatter.author}
       </p>
-      <pre>{JSON.stringify(data, null, 2)}</pre>
       <div dangerouslySetInnerHTML={{ __html: post.html }} />
       <Link to="/">&larr; wróć do strony głównej</Link>
     </Layout>
