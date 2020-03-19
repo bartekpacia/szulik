@@ -5,10 +5,18 @@ const usePosts = () => {
     {
       allMarkdownRemark {
         nodes {
+          excerpt
           frontmatter {
             author
             slug
             title
+            image {
+              sharp: childImageSharp {
+                fluid(maxWidth: 200, maxHeight: 200) {
+                  ...GatsbyImageSharpFluid_withWebp
+                }
+              }
+            }
           }
         }
       }
@@ -19,6 +27,8 @@ const usePosts = () => {
     author: post.frontmatter.author,
     slug: post.frontmatter.slug,
     title: post.frontmatter.title,
+    image: post.frontmatter.image,
+    excerpt: post.excerpt,
   }))
 }
 

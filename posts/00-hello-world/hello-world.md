@@ -7,4 +7,6 @@ image: ./images/city.jpg
 
 ![Some nice city picture](./images/city.jpg)
 
-Pierwsza przykładowa wiadomość. Można dodać zdjęcia, linki i inne fajne rzeczy.
+Pierwsza przykładowa wiadomość. Lol.
+
+Można dodać zdjęcia, linki i inne fajne rzeczy.
