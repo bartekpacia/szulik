@@ -5,6 +5,7 @@ const usePosts = () => {
     {
       allDatoCmsPost {
         nodes {
+          excerpt
           author
           slug
           title
@@ -23,7 +24,7 @@ const usePosts = () => {
     slug: post.slug,
     title: post.title,
     thumbnail: post.thumbnail,
-    excerpt: "EXAMPLE EXCERPT",
+    excerpt: post.excerpt,
   }))
 }
 

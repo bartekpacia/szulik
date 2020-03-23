@@ -4,8 +4,6 @@ exports.createPages = async ({ actions, graphql, recorder }) => {
       allDatoCmsPost {
         nodes {
           slug
-          title
-          author
         }
       }
     }

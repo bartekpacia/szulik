@@ -3,35 +3,45 @@ import React from "react"
 import { css } from "styled-components"
 import Layout from "./layout"
 
-// export const pageQuery = graphql`
-//   query($slug: String!) {
-//     markdownRemark(frontmatter: { slug: { eq: $slug } }) {
-//       html
-//       frontmatter {
-//         author
-//         title
-//       }
-//     }
-//   }
-// `
+export const pageQuery = graphql`
+  query($slug: String!) {
+    datoCmsPost(slug: { eq: $slug }) {
+      title
+      author
+      excerpt
+      contentNode {
+        childMarkdownRemark {
+          html
+        }
+      }
+      thumbnail {
+        fluid(maxWidth: 200, maxHeight: 200) {
+          ...GatsbyDatoCmsFluid
+        }
+      }
+    }
+  }
+`
 
 const PostTemplate = ({ data }) => {
-  // const post = data.markdownRemark
+  const post = data.datoCmsPost
+  const html = post.contentNode.childMarkdownRemark.html
 
   return (
-    <p>DUMMY</p>
-    // <Layout>
-    //   <h1>{post.frontmatter.title}</h1>
-    //   <p
-    //     css={css`
-    //       font-size: 0.75rem;
-    //     `}
-    //   >
-    //     autor: {post.frontmatter.author}
-    //   </p>
-    //   <div dangerouslySetInnerHTML={{ __html: post.html }} />
-    //   <Link to="/">&larr; wróć do strony głównej</Link>
-    // </Layout>
+    <>
+      <Layout>
+        <h1>{post.title}</h1>
+        <p
+          css={css`
+            font-size: 0.75rem;
+          `}
+        >
+          autor: {post.author}
+        </p>
+        <div dangerouslySetInnerHTML={{ __html: html }} />
+        <Link to="/">&larr; wróć do strony głównej</Link>
+      </Layout>
+    </>
   )
 }
 
