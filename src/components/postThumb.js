@@ -21,7 +21,7 @@ const PostThumb = ({ post }) => (
       `}
     >
       <Image
-        fluid={post.image.sharp.fluid}
+        fluid={post.thumbnail.fluid}
         css={css`
           * {
             margin-top: 0;

@@ -3,19 +3,14 @@ import { graphql, useStaticQuery } from "gatsby"
 const usePosts = () => {
   const data = useStaticQuery(graphql`
     {
-      allMarkdownRemark {
+      allDatoCmsPost {
         nodes {
-          excerpt
-          frontmatter {
-            author
-            slug
-            title
-            image {
-              sharp: childImageSharp {
-                fluid(maxWidth: 200, maxHeight: 200) {
-                  ...GatsbyImageSharpFluid_withWebp
-                }
-              }
+          author
+          slug
+          title
+          thumbnail {
+            fluid(maxWidth: 200, maxHeight: 200) {
+              ...GatsbyDatoCmsFluid
             }
           }
         }
@@ -23,12 +18,12 @@ const usePosts = () => {
     }
   `)
 
-  return data.allMarkdownRemark.nodes.map(post => ({
-    author: post.frontmatter.author,
-    slug: post.frontmatter.slug,
-    title: post.frontmatter.title,
-    image: post.frontmatter.image,
-    excerpt: post.excerpt,
+  return data.allDatoCmsPost.nodes.map(post => ({
+    author: post.author,
+    slug: post.slug,
+    title: post.title,
+    thumbnail: post.thumbnail,
+    excerpt: "EXAMPLE EXCERPT",
   }))
 }
 

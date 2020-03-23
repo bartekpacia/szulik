@@ -17,7 +17,6 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-styled-components`,
-    `gatsby-transformer-remark`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -31,10 +30,11 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: `gatsby-source-datocms`,
       options: {
-        name: "posts",
-        path: "posts",
+        apiToken: `8aeabdb012ea190f36e7d3e05c6f29`,
+        preview: false,
+        disableLiveReload: false,
       },
     },
   ],

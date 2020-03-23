@@ -1,11 +1,11 @@
 exports.createPages = async ({ actions, graphql, recorder }) => {
   const result = await graphql(`
     query {
-      allMarkdownRemark {
+      allDatoCmsPost {
         nodes {
-          frontmatter {
-            slug
-          }
+          slug
+          title
+          author
         }
       }
     }
@@ -15,14 +15,14 @@ exports.createPages = async ({ actions, graphql, recorder }) => {
     reporter.panic("failed to create posts", result.errors)
   }
 
-  const posts = result.data.allMarkdownRemark.nodes
+  const posts = result.data.allDatoCmsPost.nodes
 
   posts.forEach(post => {
     actions.createPage({
-      path: post.frontmatter.slug,
+      path: post.slug,
       component: require.resolve("./src/components/post.js"),
       context: {
-        slug: post.frontmatter.slug,
+        slug: post.slug,
       },
     })
   })
