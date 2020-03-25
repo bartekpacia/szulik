@@ -1,0 +1,5 @@
+[[redirects]]
+  from = "https://szsrybnik.netlify.com/*"
+  to = "https://szsrybnik.pl/:splat"
+  status = 301
+  force = true
