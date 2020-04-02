@@ -9,6 +9,12 @@ const usePosts = () => {
           author
           slug
           title
+          doc {
+            url
+            basename
+            filename
+            format
+          }
           thumbnail {
             fluid(maxWidth: 200, maxHeight: 200) {
               ...GatsbyDatoCmsFluid
@@ -25,6 +31,7 @@ const usePosts = () => {
     title: post.title,
     thumbnail: post.thumbnail,
     excerpt: post.excerpt,
+    doc: post.doc,
   }))
 }
 

@@ -40,6 +40,7 @@ const PostTemplate = ({ data }) => {
         </p>
         <div dangerouslySetInnerHTML={{ __html: html }} />
         <Link to="/">&larr; wróć do strony głównej</Link>
+        <pre>{JSON.stringify(post.doc, null, 2)}</pre>
       </Layout>
     </>
   )
