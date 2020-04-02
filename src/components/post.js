@@ -1,7 +1,9 @@
 import { Link, graphql } from "gatsby"
+import { Image } from "gatsby-image"
 import React from "react"
 import { css } from "styled-components"
 import Layout from "./layout"
+import pdfIcon from "../images/pdf.svg"
 
 export const pageQuery = graphql`
   query($slug: String!) {
@@ -9,6 +11,12 @@ export const pageQuery = graphql`
       title
       author
       excerpt
+      doc {
+        url
+        basename
+        filename
+        format
+      }
       contentNode {
         childMarkdownRemark {
           html
@@ -39,8 +47,34 @@ const PostTemplate = ({ data }) => {
           autor: {post.author}
         </p>
         <div dangerouslySetInnerHTML={{ __html: html }} />
-        <Link to="/">&larr; wróć do strony głównej</Link>
-        <pre>{JSON.stringify(post.doc, null, 2)}</pre>
+        {post.doc ? (
+          <div
+            css={css`
+              display: flex;
+              flex-direction: column;
+            `}
+          >
+            <b>Pliki do pobrania</b>
+            <img
+              src={pdfIcon}
+              css={css`
+                width: 3rem;
+              `}
+            />
+            <a href={post.doc.url}>{post.doc.filename}</a>
+          </div>
+        ) : (
+          <p>XD</p>
+        )}
+        {/* <pre>{`value: ${JSON.stringify(post.doc, null, 2)}`}</pre> */}
+        <Link
+          to="/"
+          css={css`
+            margin-top: 1rem;
+          `}
+        >
+          &larr; wróć do strony głównej
+        </Link>
       </Layout>
     </>
   )
