@@ -34,21 +34,21 @@ const AssetIcon = props => {
   return (
     <div
       css={css`
-        background: ${props => props.theme.colors.grey};
+        border: 3px solid ${props => props.theme.colors.primary};
+        border-radius: 15px;
         padding: 0.3rem;
         margin: 0.3rem;
-        display: flex;
+        display: inline-flex;
         align-items: center;
-        color: red;
       `}
     >
       <img
         src={pdfIcon}
         css={css`
-          width: 2rem;
+          width: 1.5rem;
         `}
       />
-      <a href={props.url}>{`plik: ${props.filename}`}</a>
+      <a href={props.url}>{props.filename}</a>
     </div>
   )
 }
@@ -73,7 +73,9 @@ const PostTemplate = ({ data }) => {
         {post.assets ? (
           <div
             css={css`
-              display: inline-flex;
+              display: flex;
+              align-items: flex-start;
+              flex: 0 0 100x;
               flex-direction: column;
               margin-bottom: 1rem;
             `}
