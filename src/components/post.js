@@ -98,7 +98,7 @@ const PostTemplate = ({ data }) => {
           </p>
         </div>
         <div dangerouslySetInnerHTML={{ __html: html }} />
-        <b>Pliki do pobrania</b>
+        {post.assets.length > 0 ? <b>Pliki do pobrania</b> : null}
         {post.assets ? (
           <div
             css={css`
