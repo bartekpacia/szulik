@@ -1,7 +1,9 @@
 import React from "react"
+import Helmet from "react-helmet"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import { createGlobalStyle, ThemeProvider } from "styled-components"
+import useSiteMetadata from "../hooks/useSiteMetadata"
 
 import Header from "./header"
 import theme from "../utils/theme"
@@ -61,9 +63,16 @@ const StyledWrapper = styled.div`
 `
 
 const Layout = ({ children }) => {
+  const { title, description } = useSiteMetadata()
+
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
+      <Helmet>
+        <html lang="pl" />
+        <title>{title}</title>
+        <meta name="description" content={description} />
+      </Helmet>
       <StyledWrapper>
         <Header />
         <main>{children}</main>
