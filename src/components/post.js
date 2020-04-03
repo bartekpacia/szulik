@@ -11,7 +11,7 @@ export const pageQuery = graphql`
       title
       author
       excerpt
-      doc {
+      assets {
         url
         basename
         filename
@@ -55,13 +55,19 @@ const PostTemplate = ({ data }) => {
             `}
           >
             <b>Pliki do pobrania</b>
-            <img
-              src={pdfIcon}
-              css={css`
-                width: 3rem;
-              `}
-            />
-            <a href={post.doc.url}>{post.doc.filename}</a>
+            {post.assets.forEach(asset => {
+              return (
+                <>
+                  <img
+                    src={pdfIcon}
+                    css={css`
+                      width: 3rem;
+                    `}
+                  />
+                  <a href={post.doc.url}>{post.doc.filename}</a>
+                </>
+              )
+            })}
           </div>
         ) : (
           <p>XD</p>
