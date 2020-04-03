@@ -10,6 +10,7 @@ export const pageQuery = graphql`
       title
       author
       excerpt
+      creationDate
       assets {
         url
         basename
@@ -57,17 +58,45 @@ const PostTemplate = ({ data }) => {
   const post = data.datoCmsPost
   const html = post.contentNode.childMarkdownRemark.html
 
+  const dateOptions = {
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  }
+
   return (
     <>
       <Layout>
         <h1>{post.title}</h1>
-        <p
+        <div
           css={css`
-            font-size: 0.75rem;
+            display: flex;
           `}
         >
-          autor: {post.author}
-        </p>
+          <p
+            css={css`
+              font-size: 0.75rem;
+              margin: 0;
+              margin-right: 0.3rem;
+            `}
+          >
+            Dodane przez <b>{post.author}</b>
+          </p>
+          <p
+            css={css`
+              font-size: 0.75rem;
+              margin: 0;
+            `}
+          >
+            {" "}
+            w{" "}
+            {new Date(Date.parse(post.creationDate)).toLocaleDateString(
+              "pl-PL",
+              dateOptions
+            )}
+          </p>
+        </div>
         <div dangerouslySetInnerHTML={{ __html: html }} />
         <b>Pliki do pobrania</b>
         {post.assets ? (
