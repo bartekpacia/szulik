@@ -16,7 +16,7 @@ const IndexPage = () => {
           display: block;
           margin: 0;
           padding: 1rem;
-          background: #eee;
+          background: ${props => props.theme.colors.grey};
         `}
       >
         Znajdziesz tu wszystkie informacje o nowych osiągnięciach, dokumenty,
