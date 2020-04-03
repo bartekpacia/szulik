@@ -3,7 +3,7 @@ import { graphql, useStaticQuery } from "gatsby"
 const usePosts = () => {
   const data = useStaticQuery(graphql`
     {
-      allDatoCmsPost {
+      allDatoCmsPost(sort: { fields: [creationDate], order: DESC }) {
         nodes {
           excerpt
           author

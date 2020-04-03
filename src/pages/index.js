@@ -29,7 +29,7 @@ const IndexPage = () => {
           flex-direction: column;
         `}
       >
-        {posts.map(post => (
+        {posts.slice(0, 3).map(post => (
           <PostThumb key={post.slug} post={post} />
         ))}
       </div>
