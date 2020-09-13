@@ -19,7 +19,7 @@ const usePosts = () => {
     }
   `)
 
-  return data.allDatoCmsPost.nodes.map(post => ({
+  return data.allDatoCmsPost.nodes.map((post) => ({
     author: post.author,
     slug: post.slug,
     title: post.title,

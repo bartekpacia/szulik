@@ -21,7 +21,7 @@ const GlobalStyle = createGlobalStyle`
 
    a, a:visited {
     text-decoration: none;
-    color: ${props => props.theme.colors.primaryDark}
+    color: ${(props) => props.theme.colors.primaryDark}
   }
 
   *, *::before, *::after {

@@ -15,7 +15,7 @@ exports.createPages = async ({ actions, graphql, recorder }) => {
 
   const posts = result.data.allDatoCmsPost.nodes
 
-  posts.forEach(post => {
+  posts.forEach((post) => {
     actions.createPage({
       path: post.slug,
       component: require.resolve("./src/components/post.js"),

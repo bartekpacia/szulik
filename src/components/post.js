@@ -31,11 +31,11 @@ export const pageQuery = graphql`
   }
 `
 
-const AssetIcon = props => {
+const AssetIcon = (props) => {
   return (
     <div
       css={css`
-        border: 3px solid ${props => props.theme.colors.primary};
+        border: 3px solid ${(props) => props.theme.colors.primary};
         border-radius: 15px;
         padding: 0.3rem;
         margin: 0.3rem;
@@ -45,6 +45,7 @@ const AssetIcon = props => {
     >
       <img
         src={pdfIcon}
+        alt={"Ikonka pliku pdf"}
         css={css`
           width: 1.5rem;
         `}
@@ -90,7 +91,7 @@ const PostTemplate = ({ data }) => {
             `}
           >
             {" "}
-            w{" "}
+            |{" "}
             {new Date(Date.parse(post.creationDate)).toLocaleDateString(
               "pl-PL",
               dateOptions
@@ -109,7 +110,7 @@ const PostTemplate = ({ data }) => {
               margin-bottom: 1rem;
             `}
           >
-            {post.assets.map(asset => AssetIcon(asset))}
+            {post.assets.map((asset) => AssetIcon(asset))}
           </div>
         ) : null}
         {/* <pre>{JSON.stringify(post.assets, null, 2)}</pre> */}

@@ -12,7 +12,7 @@ const SecondPage = () => {
     <Layout>
       <h1>Aktualności</h1>
       <p>Co w trawie piszczy...</p>
-      {posts.map(post => (
+      {posts.map((post) => (
         <PostThumb key={post.slug} post={post} />
       ))}
       <Link

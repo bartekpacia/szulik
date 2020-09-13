@@ -38,7 +38,7 @@ const Header = () => {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        background: ${props => props.theme.colors.primary};
+        background: ${(props) => props.theme.colors.primary};
         padding: 0.5rem;
 
         @media (min-width: 600px) {
