@@ -7,6 +7,7 @@ import useSiteMetadata from "../hooks/useSiteMetadata"
 
 import Header from "./header"
 import theme from "../utils/theme"
+import Footer from "./footer"
 
 const GlobalStyle = createGlobalStyle`
   html {
@@ -67,21 +68,16 @@ const Layout = ({ children }) => {
 
   return (
     <ThemeProvider theme={theme}>
-      <GlobalStyle />
+      <GlobalStyle/>
       <Helmet>
-        <html lang="pl" />
+        <html lang="pl"/>
         <title>{title}</title>
-        <meta name="description" content={description} />
+        <meta name="description" content={description}/>
       </Helmet>
       <StyledWrapper>
-        <Header />
+        <Header/>
         <main>{children}</main>
-        <footer>
-          <p>© {new Date().getFullYear()} SZS Rybnik</p>
-          <p>
-            stworzył <a href="http://bartekpacia.github.io">@bartekpacia</a>
-          </p>
-        </footer>
+        <Footer/>
       </StyledWrapper>
     </ThemeProvider>
   )
