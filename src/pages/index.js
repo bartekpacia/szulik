@@ -19,8 +19,7 @@ const IndexPage = () => {
           background: ${(props) => props.theme.colors.grey};
         `}
       >
-        Znajdziesz tu wszystkie informacje o nowych osiągnięciach, dokumenty,
-        bla bla bla.
+        Znajdziesz tu wszystkie informacje o szkolnym sporcie w Rybniku.
       </p>
       <h2>Najnowsze aktualności</h2>
       <div

@@ -4,7 +4,9 @@ import Layout from "../components/layout"
 const AboutPage = () => (
   <Layout>
     <h1>O nas</h1>
-    <p>Informacje o historii, czymkolwiek, bla bla.</p>
+    <p>Prezes: Grażyna Szulik</p>
+    <p>Członkowie zarządu: Adrian Kisiel, Katarzyna Piecha, Radał Chwastek</p>
+    <p>Komisja rewizyjna: Michał Wita</p>
   </Layout>
 )
 
