@@ -4,6 +4,9 @@
   "description": "A simple starter to get up and developing quickly with Gatsby",
   "version": "0.1.0",
   "author": "Bartek Pacia <barpac02@gmail.com>",
+  "engines": {
+    "node": "12"
+  },
   "dependencies": {
     "babel-plugin-styled-components": "^1.11.1",
     "gatsby": "^2.24.57",
