@@ -52,9 +52,6 @@ const Header = () => {
         <NavLink to="/news/" activeClassName="current-page">
           Aktualności
         </NavLink>
-        <NavLink to="/photos" activeClassName="current-page">
-          Zdjęcia
-        </NavLink>
         <NavLink to="/about" activeClassName="current-page">
           O nas
         </NavLink>
