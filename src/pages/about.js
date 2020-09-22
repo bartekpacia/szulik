@@ -17,16 +17,10 @@ const AboutPage = () => (
     </ul>
     <p>Komisja rewizyjna:</p>
     <ul>
-      <li>Chwastek Rafał</li>
-      <li>Dudek Małgorzata</li>
-      <li>Dudek Małgorzata</li>
-      <li>Kisiel Adrian </li>
-      <li>Kucjas Krzysztof</li>
-      <li>Piecha Katarzyna </li>
-      <li>Pojda Aleksander</li>
-      <li> Szulik Grażyna</li>
+      <li>Szulik Jacek</li>
+      <li>Delong-Michałowska Izabela </li>
+      <li>Wita Michał</li>
     </ul>
-    <p>K Michał Wita</p>
   </Layout>
 )
 
