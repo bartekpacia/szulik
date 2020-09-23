@@ -18,7 +18,7 @@ const AboutPage = () => (
     <p>Komisja rewizyjna:</p>
     <ul>
       <li>Szulik Jacek</li>
-      <li>Delong-Michałowska Izabela </li>
+      <li>Delong-Michałowska Izabela</li>
       <li>Wita Michał</li>
     </ul>
   </Layout>
