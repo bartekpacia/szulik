@@ -8,7 +8,7 @@ const AboutPage = () => (
     <ul>
       <li>Chwastek Rafał</li>
       <li>Dudek Małgorzata</li>
-      <li>Dudek Małgorzata</li>
+      <li>Jarosław Salomon</li>
       <li>Kisiel Adrian </li>
       <li>Kucjas Krzysztof</li>
       <li>Piecha Katarzyna </li>
